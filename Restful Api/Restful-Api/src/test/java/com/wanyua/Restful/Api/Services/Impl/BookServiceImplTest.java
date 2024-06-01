@@ -28,6 +28,6 @@ public class BookServiceImplTest {
     final BookEntity bookEntity = BookEntity.builder().isbn("0434532").author("Tim Keller").title("Meaning of Marriage").build();
     final Book result = underTest.create(book);
 
-    when(bookRepository.save(eq(bookEntity))).thenReturn(bookEntity);
+    void when(bookRepository.save(eq(bookEntity))).thenReturn(bookEntity);
     asserEquals(book, null);
 }
