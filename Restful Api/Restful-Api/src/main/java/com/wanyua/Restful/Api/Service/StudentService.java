@@ -46,5 +46,9 @@ public class StudentService {
         studentRepo.deleteById(id);
         return "Deleted successfully!";
     }
+//    Posting a list of json
+    public List<StudentEntity> saveListOfDetails(List<StudentEntity> studentEntityList){
+        return studentRepo.saveAll(studentEntityList);
+    }
 
 }

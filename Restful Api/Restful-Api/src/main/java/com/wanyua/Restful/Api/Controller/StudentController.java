@@ -34,4 +34,10 @@ public class StudentController {
         return studentService.deleteDetail(id);
     }
 
+    @PostMapping("/addStudentList")
+    public List<StudentEntity> postListOfDetails(@RequestBody List<StudentEntity> studentEntityList){
+        return studentService.saveListOfDetails(studentEntityList);
+    }
+
+
 }
