@@ -3,10 +3,7 @@ package com.wanyua.Restful.Api.Controller;
 import com.wanyua.Restful.Api.Entity.StudentEntity;
 import com.wanyua.Restful.Api.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,10 @@ public class StudentController {
     @GetMapping("/getAllStudents")
     public List<StudentEntity> getDetails(){
         return studentService.getAllDetails();
+    }
+    @GetMapping("/getStudentById/{id}")
+    public StudentEntity getById(@PathVariable int id){
+        return studentService.getStudentById(id);
     }
 
 }

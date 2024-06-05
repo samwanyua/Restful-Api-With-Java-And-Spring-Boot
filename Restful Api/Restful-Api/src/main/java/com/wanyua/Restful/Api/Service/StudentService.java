@@ -15,9 +15,13 @@ public class StudentService {
     public StudentEntity saveDetails(StudentEntity studentEntity){
         return studentRepo.save(studentEntity);
     }
-
+// Fetching all data function
     public List<StudentEntity> getAllDetails(){
         return studentRepo.findAll();
+    }
+//    Fetching data by ID
+    public StudentEntity getStudentById(int id){
+        return studentRepo.findById(id).orElse(null);
     }
 
 }
