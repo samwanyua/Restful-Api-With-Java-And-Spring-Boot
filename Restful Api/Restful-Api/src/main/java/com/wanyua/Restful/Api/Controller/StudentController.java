@@ -25,5 +25,9 @@ public class StudentController {
     public StudentEntity getById(@PathVariable int id){
         return studentService.getStudentById(id);
     }
+    @PutMapping("updateStudent")
+    public StudentEntity updateStudentDetails(@RequestBody StudentEntity studentEntity){
+        return studentService.updateDetail(studentEntity);
+    }
 
 }
