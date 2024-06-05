@@ -4,6 +4,7 @@ import com.wanyua.Restful.Api.Entity.StudentEntity;
 import com.wanyua.Restful.Api.Repository.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
@@ -39,6 +40,11 @@ public class StudentService {
         else{
             return  null;
         }
+    }
+//    Delete a student
+    public String deleteDetail(int id){
+        studentRepo.deleteById(id);
+        return "Deleted successfully!";
     }
 
 }
